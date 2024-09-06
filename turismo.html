@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imagens/Simbolo.png" type="image/x-icon">
+    <title>Turismo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+    background-color: #000000; /* Cor de fundo do header */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+#LinhaVermelha{
+     background: rgb(225,1,1);
+background: linear-gradient(to bottom, rgba(225,1,1,1) 0%, rgba(143,0,0,1) 100%);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    margin: auto;
+  display: block;
+}
+.logo img{
+  height: 140px;
+}
+
+/* DOPDOWN */
+
+ul .dropdown{
+    list-style: none;
+    background: #E10101;
+}
+
+ul .dropdown li {
+    padding: 5px;
+}
+
+ul .dropdown li a {
+    display: block;
+    padding: 5px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Estilo para o menu principal no header */
+.main-menu {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.main-menu li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Estilo para o menu de navegação principal */
+.main-navigation {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    background: #E10101;
+}
+
+.main-navigation li {
+    display: inline-block;
+    margin-right: 20px;
+    padding: 15px 15px;
+}
+
+.main-navigation li a {
+    text-decoration: none;
+    color: #f9f9f9;
+}
+
+/* Estilo para o dropdown */
+.dropdown {
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.main-navigation li:hover .dropdown {
+    display: block;
+}
+
+.main-navigation .dropdown a:hover {
+    text-decoration: underline
+}
+        .content {
+            padding: 20px;
+            max-width: 1250px;
+            margin: auto;
+            background-color: white;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            margin-top: 60px;
+        }
+
+        .section img {
+            width: 500px;
+            height: 326px;
+            border-radius: 5px;
+        }
+
+        .sectionn .ttl1 {
+            text-align: center;
+            margin-bottom: 0px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 35px;
+        }
+
+        .sectionn .txt1 {
+            text-align: justify;
+            padding: 0px 120px 20px 120px;
+            margin-top: 0px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 450;
+            font-style: normal;
+            font-size: 15px;
+        }
+
+        .section .ttl2 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 35px;
+            margin-bottom: 0px;
+            text-align: center;
+        }
+
+        .section .txt2 {
+            text-align: justify;
+            font-family: "Poppins", sans-serif;
+            font-weight: 450;
+            font-style: normal;
+            font-size: 15px;
+            padding: 0px 0px 0px 10px;
+            margin-top: 0px;
+        }
+
+        .section .ttl3 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 35px;
+            margin-bottom: 0px;
+            text-align: center;
+        }
+
+        .section .txt3 {
+            text-align: justify;
+            font-family: "Poppins", sans-serif;
+            font-weight: 450;
+            font-style: normal;
+            font-size: 15px;
+            padding: 0px 10px 0px 0px;
+            margin-top: 0px;
+        }
+
+        .footer {
+            background-color: #f0f0f0;
+            color: #000;
+            padding: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 1px solid #ccc;
+            margin-top: 60px;
+        }
+
+        .footer .left {
+            width: 55%;
+            font-family: "Poppins", sans-serif;
+            font-weight: 450;
+            font-style: normal;
+            font-size: 15px;
+        }
+
+        .footer .right {
+            text-align: left;
+        }
+
+        .footer .left ul li,
+        .footer .right ul li {
+            margin-bottom: 8px;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer .right {
+            font-family: "Poppins", sans-serif;
+            font-weight: 450;
+            font-style: normal;
+            font-size: 15px;
+        }
+
+        .final {
+            background-color: #000;
+            height: 40px;
+        }
+
+        .final .txt4 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 450;
+            font-style: normal;
+            font-size: 15px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="item">
+            <!-- <h1>Nome do Site</h1> -->
+        </div>
+        <nav>
+            <ul class="main-menu">
+                <li><a href="#home">Peta Situs</a></li>
+                <li><a href="#about">Legalisasi</a></li>
+                <li><a href="#services">IN | EN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Linha Vermelha Section -->
+    <div id="LinhaVermelha">
+        <div class="logo">
+            <img src="kisspng-embassy-of-indonesia-garuda-international-organiza-dewan-wilayah-jawa-timur-assosiasi-iumkm-indones-5b64932a6bd056.7465344215333179304416-removebg-preview.png" alt="">
+        </div>
+    </div>
+
+    <!-- Main Navigation Menu -->
+    <ul class="main-navigation">
+        <li>
+            <a href="#">All about Indonesia</a>
+            <ul class="dropdown">
+                <li><a href="#">Strategic Position</a></li><br>
+                <li><a href="#">Migrations and Influence</a></li><br>
+                <li><a href="#">Indian Influence and Rise of Empires</a></li><br>
+                <li><a href="#">Temples and Architecture</a></li><br>
+                <li><a href="#">Mongol Invasion and Spread of Islam</a></li><br>
+            </ul>
+        <li>
+            <a href="#">Consular Information</a>
+            <ul class="dropdown">
+                <li><a href="#">Press releases</a></li><br>
+            </ul>
+        </li>
+        <li><a href="#">Visa Information</a></li>
+        <li><a href="#">Tourism and Travel</a>
+            <ul class="dropdown">
+                <li><a href="#">Tourism</a></li><br>
+                <li><a href="#">Bali</a></li><br>
+                <li><a href="#">Jakarta</a></li><br>
+                <li><a href="#">Java</a></li><br>
+                <li><a href="#">Kalimantan</a></li><br>
+                <li><a href="#">Papua</a></li><br>
+                <li><a href="#">Sulawesi</a></li><br>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Trade fairs and Exhibition</a>
+            <ul class="dropdown">
+                <li><a href="#">The 26th Trade Expo Indonesia</a></li><br>
+                <li><a href="#">Upcoming Trade Shows in Indonesia</a></li><br>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Newspapers and Links</a>
+            <ul class="dropdown">
+                <li><a href="#">News agency</a></li><br>
+                <li><a href="#">Official Links</a></li><br>
+                <li><a href="#">Useful Links</a></li><br>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="content">
+        <div class="sectionn">
+            <h2 class="ttl1">Turismo</h2>
+            <p class="txt1">Indonesia is a fascinating and diverse tourist destination, offering a wide range of
+                experiences for all types of travelers. With over 17,000 islands, the country is a true paradise for
+                nature lovers, culture enthusiasts, and adventurers. Indonesia is known for its stunning landscapes,
+                which range from white sandy beaches and crystal-clear waters to majestic volcanoes and lush tropical
+                forests. It is a cultural melting pot with over 300 ethnic groups and a rich cultural heritage. Each
+                region has its own traditions, dances, music, and cuisine. With its diversity of landscapes, cultures,
+                and activities, Indonesia promises an unforgettable travel experience. Whether exploring its natural
+                beauty, delving into its rich heritage, or embarking on exciting adventures, Indonesia offers something
+                special for every type of traveler. It is a place where nature and culture uniquely intersect, creating
+                memories that will last a lifetime.</p>
+        </div>
+
+        <div class="section">
+            <img src="imagens/Bali.jpg" alt="Bali">
+            <div>
+                <h2 class="ttl2">Bali</h2>
+                <p class="txt2">Bali is a tropical island in Indonesia, known as a paradise on Earth, with sunny
+                    beaches, tropical jungles, volcanoes, and a rich local culture. In addition to its landscapes, it
+                    offers various tourist activities such as diving, hiking, and golf. Bali's history dates back to the
+                    9th century, with the arrival of Hinduism in the 11th century and a cultural flourishing in the 14th
+                    century. It was ruled by the Dutch for over 300 years before becoming part of Indonesia in 1945.
+                    Bali has a tropical climate with dry and wet seasons, and its main tourist attractions include
+                    Denpasar, Sanur, Kuta, Nusa Dua, Menjangan Island, and Klungkung, each with unique features such as
+                    temples, beaches, and coral reefs.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div>
+                <h2 class="ttl3">Jakarta</h2>
+                <p class="txt3">Jakarta, the capital and largest city of Indonesia, blends modernity with a rich
+                    cultural heritage, preserving its colonial structures alongside skyscrapers. The city, the main
+                    gateway to the country, offers luxury accommodations, vibrant nightlife, and extensive shopping
+                    options. Historically, Jakarta was a small port, conquered and renamed several times, passing
+                    through Muslim, Dutch, and Japanese rule until Indonesian independence in 1945. With a tropical
+                    climate, the city boasts attractions such as the National Monument, the National Museum, the
+                    Istiqlal Mosque, orchid gardens, the village of Condet, Taman Mini park, and the Pulau Seribu
+                    islands, known for their beaches and coral reefs.</p>
+            </div>
+            <img src="imagens/jakarta.jpg" alt="Jakarta">
+        </div>
+
+        <div class="section">
+            <img src="imagens/java.jpg" alt="Java">
+            <div>
+                <h2 class="ttl2">Java</h2>
+                <p class="txt2">Java, the most populous and developed island in Indonesia, is divided into three
+                    provinces,
+                    with Jakarta as its capital. The island blends rural areas with congested cities, reflecting a
+                    rapidly
+                    changing society. Historically inhabited since 4000 B.C., Java developed rice agriculture and
+                    established trade relations with India, influencing the adoption of Hinduism and Buddhism. After
+                    periods
+                    of rule by various kingdoms and European colonization, Indonesia gained its independence in 1949.
+                    Java
+                    has a stable climate and is home to major tourist attractions such as Bandung, Borobudur, Prambanan,
+                    Yogyakarta, Sangiran, and the National Museum.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div>
+                <h2 class="ttl3">Kalimantan</h2>
+                <p class="txt3">Kalimantan, the second largest island in the world, is divided among Malaysia, Brunei,
+                    and Indonesia. Known for its tropical forests and biodiversity, the island has a tropical climate
+                    with
+                    high humidity and precipitation. Historically, it was influenced by Indian colonizers, adopted
+                    Islam, and
+                    was controlled by the Dutch before being divided into four provinces by Indonesia after World War
+                    II.
+                    Its main tourist attractions are Pontianak, Derawan Island, Bontang, Gunung Palung National Park and
+                    Nature Reserve, Palangkaraya, and Sampit.</p>
+            </div>
+
+            <img src="imagens/kalimantan.jpg" alt="Kalimantan">
+        </div>
+
+        <div class="section">
+            <img src="imagens/papua.jpg" alt="Papua">
+            <div>
+                <h2 class="ttl2">Papua</h2>
+                <p class="txt2">The easternmost island of Indonesia, one of the largest in the archipelago, borders
+                    Papua
+                    New Guinea and features snow-capped mountains, lush valleys, dense jungles, and swamps. It’s perfect
+                    for
+                    trekking, with trails leading to traditional honai villages. Visitors can explore Lake Sentani, go
+                    boating, dive and snorkel in the coral triangle and Raja Ampat, known for marine biodiversity. On
+                    Biak
+                    Island, you can see the bird of paradise. Mount Carstenz Pyramid (Puncak Jaya) is the highest peak
+                    in
+                    the region. Traditional honai houses are found in Wamena, while the southeast coast is home to the
+                    Asmat
+                    people, famous for their wooden carvings. The Baliem Festival, held in August or September,
+                    showcases
+                    local culture with participation from all regional tribes.</p>
+            </div>
+
+        </div>
+
+        <div class="section">
+            <div>
+                <h2 class="ttl3">Sulawesi</h2>
+                <p class="txt3">Formerly known as Celebes, Sulawesi is the third largest island in Indonesia, covering
+                    172,000 square kilometers and shaped like a tropical orchid. Divided into three provinces, it
+                    features
+                    mountains, scenic coastlines, lakes, and dense jungles. With a rich history, it was significant for
+                    trade in the 16th century and came under Dutch control in the 17th century. By the early 20th
+                    century,
+                    the Dutch had consolidated their control over the interior. Sulawesi has been part of Indonesia
+                    since
+                    its independence. The climate is hot and tropical, with a dry season from April to October and a
+                    rainy
+                    season from November to May. Major tourist attractions include Manado, Bunaken Marine Park, Manado
+                    Tua
+                    Island, Kendari, Moramo Waterfall, and Moramo Bay.</p>
+            </div>
+
+            <img src="imagens/sulawesi.jpg" alt="Sulawesi">
+        </div>
+
+        <div class="section">
+            <img src="imagens/sumatra.jpg" alt="Sumatra">
+            <div>
+                <h2 class="ttl2">Sumatra</h2>
+                <p class="txt2">Sumatra is a diverse destination known for its beaches, rich biodiversity, and history.
+                    Often called the "Africa of Asia" for its wildlife, it is ideal for nature lovers and trekkers,
+                    offering
+                    tranquility compared to Java and Bali. Historically, it was ruled by the Sri Vijaya Empire, the
+                    Sultanate of Achin, and later the Dutch. Occupied by Japan during World War II, it became part of
+                    Indonesia in 1949, though it faced local resistance. The climate is rainy in the north from October
+                    to
+                    April and in the south from December to February. Key attractions include Medan, Berastagi, Lake
+                    Toba,
+                    Danau Ranau, and Aceh, with highlights like Gunung Leuser National Park and an orangutan
+                    rehabilitation
+                    center.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="left">
+            <ul>
+                <li>All about Indonesia</li>
+                <li>Consular Information</li>
+                <li>Visa Information</li>
+                <li>Tourism and Travel</li>
+                <li>Trade fairs and Exhibition</li>
+                <li>Newspapers and Links</li>
+            </ul>
+        </div>
+        <div class="right">
+            <ul>
+                <li>Consulate of Indonesia</li>
+                <li>Yerevan, Armenia</li>
+                <li>Israyelyan Street, Bld. 37/147</li>
+                <li>0015 Yerevan, Armenia</li>
+                <li>Tel: +374 10 528825</li>
+                <li>Fax: +374 10 565669</li>
+                <li>E-mail: info@riconsulate.am</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="final">
+        <p class="txt4">2024</p>
+    </div>
+
+</body>
+
+</html>
